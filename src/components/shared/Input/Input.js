@@ -1,5 +1,4 @@
 import React from 'react';
-import input from './index';
 import styles from './Input.module.scss';
 import classnames from 'classnames';
 

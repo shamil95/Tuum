@@ -1,4 +1,4 @@
-import { COUNTRIES_DATA_CHANGED, COUNTRIES_FETCHING_CHANGED, TEST } from '../types';
+import { COUNTRIES_DATA_CHANGED, COUNTRIES_FETCHING_CHANGED } from '../types';
 
 const initialState = {
     countries: [],

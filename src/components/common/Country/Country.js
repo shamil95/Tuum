@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Select from 'react-select';
 import { useSelector } from 'react-redux';
 import styles from './Country.module.scss';
