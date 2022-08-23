@@ -36,9 +36,5 @@ export const sendContactInfo = params => async dispatch => {
 
     const info = await ContactUsService.sendContactInfo(params);
 
-    if (!info) {
-        return;
-    }
-
-    return info;
+    return info || true;
 };

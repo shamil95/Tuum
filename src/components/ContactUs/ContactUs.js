@@ -9,20 +9,23 @@ import Country from '../common/Country';
 
 const ContactUs = () => {
     const dispatch = useDispatch();
+    const formInitalState = { cookiePolicy: false, newsLetter: false };
 
-    const [formData, setFormData] = useState({
-        cookiePolicy: false,
-        newsLetter: false,
-    });
+    const [formData, setFormData] = useState(formInitalState);
 
     useEffect(() => {
         dispatch(getCountries());
     }, []);
 
-    const onsubmit = e => {
+    const onsubmit = async e => {
         e.preventDefault();
 
-        dispatch(sendContactInfo(formData));
+        const info = await dispatch(sendContactInfo(formData));
+
+        if (info) {
+            setFormData(formInitalState);
+            e.target.reset();
+        }
     };
 
     const handleChangeInputs = e => {
