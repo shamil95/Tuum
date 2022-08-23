@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     font-weight: 400;
+    padding: 10px;
 }
 
 .title {
@@ -72,6 +73,7 @@
     height: 110px;
     margin-top: 8px;
     font-size: 1.6rem;
+    font-family: inherit;
 }
 
 .input {
@@ -123,12 +125,12 @@
 .selectContainer {
     :global {
         .common-select {
-            .common__control {
-                width: 100%;
+            margin-top: 30px;
+            width: 100%;
 
-                @include sm {
-                    width: 210px;
-                }
+            @include sm {
+                width: 210px;
+                margin-top: 0;
             }
         }
     }
