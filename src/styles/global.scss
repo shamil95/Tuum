@@ -1,0 +1,17 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    background-color: #a7d0d8;
+}
+
+input[type='checkbox'] {
+    transform: scale(1.5);
+}
+
+textarea:focus {
+    outline: none !important;
+}

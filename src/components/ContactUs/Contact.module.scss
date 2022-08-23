@@ -1,0 +1,145 @@
+@import './src/styles/utils/responsive';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    padding: 10px;
+}
+
+.title {
+    font-size: 4rem;
+    margin: 50px 0;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include md {
+        flex-direction: row;
+    }
+}
+
+.contact {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.contactTitle {
+    margin-bottom: 8px;
+}
+
+.email {
+    color: #140923;
+    opacity: 0.6;
+    margin-top: 8px;
+}
+
+.form {
+    margin-top: 20px;
+
+    @include md {
+        margin-top: 0;
+        margin-left: 30px;
+    }
+}
+
+.formContent {
+    display: flex;
+    flex-direction: column;
+
+    @include sm {
+        flex-direction: row;
+    }
+}
+
+.extraInfo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.textArea {
+    background-color: transparent;
+    border: 1px solid #000000;
+    height: 110px;
+    margin-top: 8px;
+    font-size: 1.6rem;
+    font-family: inherit;
+}
+
+.input {
+    margin: 0 0 36px 0;
+    font-size: 1.6rem;
+    padding: 0 15px 15px 0;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    @include sm {
+        margin: 0 25px 36px 0;
+    }
+}
+
+.checkboxContainer {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox {
+    margin-right: 15px;
+}
+
+.policy {
+    display: flex;
+    flex-direction: column;
+}
+
+.cookie {
+    text-decoration: inherit;
+    color: inherit;
+    opacity: 0.6;
+}
+
+.submitBtn {
+    border: none;
+    border-bottom: 1px solid #000000;
+    background-color: transparent;
+    font-size: 2.4rem;
+    opacity: 0.6;
+    padding: 0;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.selectContainer {
+    :global {
+        .common-select {
+            margin-top: 30px;
+            width: 100%;
+
+            @include sm {
+                width: 210px;
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.country {
+    @extend .selectContainer;
+
+    @include sm {
+        margin-right: 25px;
+    }
+}

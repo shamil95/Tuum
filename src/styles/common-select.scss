@@ -1,0 +1,56 @@
+.common-select {
+    .common__control {
+        background-color: #a7d0d8;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #000;
+        cursor: pointer;
+        user-select: none;
+        width: 100%;
+        min-height: 0;
+
+        &--is-focused {
+            box-shadow: none;
+        }
+    }
+    .common__menu-list {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        user-select: none;
+
+        @include sm {
+            width: 210px;
+        }
+    }
+
+    .common__menu {
+        background-color: #a7d0d8;
+
+        .common__option {
+            background-color: transparent;
+            color: #000000;
+            cursor: pointer;
+
+            &:hover,
+            &--is-selected,
+            &--is-focused {
+                background-color: #adccd3;
+            }
+        }
+    }
+    .common__indicators {
+        .common__indicator-separator {
+            display: none;
+        }
+        .common__indicator {
+            color: #000000;
+            padding: 0;
+            width: 15px;
+            height: 15px;
+        }
+    }
+    .common__value-container {
+        padding: 0;
+    }
+}
