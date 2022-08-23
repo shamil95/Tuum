@@ -68,8 +68,10 @@
 
 .textArea {
     background-color: transparent;
+    border: 1px solid #000000;
     height: 110px;
     margin-top: 8px;
+    font-size: 1.6rem;
 }
 
 .input {
@@ -94,10 +96,6 @@
 
 .checkbox {
     margin-right: 15px;
-}
-
-input[type='checkbox'] {
-    transform: scale(1.5);
 }
 
 .policy {

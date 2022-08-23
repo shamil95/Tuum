@@ -2,6 +2,7 @@
     .common__control {
         background-color: #a7d0d8;
         border: none;
+        border-radius: 0;
         border-bottom: 1px solid #000;
         cursor: pointer;
         user-select: none;
@@ -16,7 +17,10 @@
         border: none;
         cursor: pointer;
         user-select: none;
-        width: 210px;
+
+        @include sm {
+            width: 210px;
+        }
     }
 
     .common__menu {

@@ -9,53 +9,27 @@ import Country from '../common/Country';
 
 const ContactUs = () => {
     const dispatch = useDispatch();
+
     const [formData, setFormData] = useState({
         cookiePolicy: false,
         newsLetter: false,
     });
-    const [selectedData, setSelectedData] = useState({});
 
     useEffect(() => {
         dispatch(getCountries());
     }, []);
 
     const onsubmit = e => {
-        const data = {
-            ...formData,
-            country: selectedData.country,
-            industry: selectedData.industry,
-            geography: selectedData.geography,
-        };
         e.preventDefault();
-        dispatch(sendContactInfo(data));
+
+        dispatch(sendContactInfo(formData));
     };
 
-    const handleChange = e => {
-        const { value, name } = e.target;
+    const handleChange = (name, value) => {
         setFormData({
             ...formData,
             [name]: value,
         });
-    };
-
-    const handleChangeCheckbox = e => {
-        const { checked, name } = e.target;
-        setFormData({
-            ...formData,
-            [name]: checked,
-        });
-    };
-
-    const onCountryChange = value => {
-        setSelectedData({ ...selectedData, country: value });
-    };
-
-    const handleChangeIndustry = value => {
-        setSelectedData({ ...selectedData, industry: value });
-    };
-
-    const handleChangeGeography = value => {
-        setSelectedData({ ...selectedData, geography: value });
     };
 
     return (
@@ -79,14 +53,14 @@ const ContactUs = () => {
                             name={'firstName'}
                             placeholder={'First Name'}
                             className={styles.input}
-                            onChange={handleChange}
+                            onChange={e => handleChange('firstName', e.target.value)}
                         />
                         <Input
                             type='text'
                             name={'lastName'}
                             placeholder={'Last Name'}
                             className={styles.input}
-                            onChange={handleChange}
+                            onChange={e => handleChange('lastName', e.target.value)}
                         />
                     </div>
                     <div className={styles.formContent}>
@@ -95,14 +69,14 @@ const ContactUs = () => {
                             name={'email'}
                             placeholder={'Email'}
                             className={styles.input}
-                            onChange={handleChange}
+                            onChange={e => handleChange('email', e.target.value)}
                         />
                         <Input
                             type='text'
                             name={'jobTitle'}
                             placeholder={'Job title'}
                             className={styles.input}
-                            onChange={handleChange}
+                            onChange={e => handleChange('jobTitle', e.target.value)}
                         />
                     </div>
                     <div className={styles.formContent}>
@@ -111,7 +85,7 @@ const ContactUs = () => {
                             name={'companyName'}
                             placeholder={'Company Name'}
                             className={styles.input}
-                            onChange={handleChange}
+                            onChange={e => handleChange('companyName', e.target.value)}
                         />
                         <div className={styles.selectContainer}>
                             <Select
@@ -119,14 +93,14 @@ const ContactUs = () => {
                                 classNamePrefix='common'
                                 menuPlacement={'auto'}
                                 options={industryOptions}
-                                onChange={({ label }) => handleChangeIndustry(label)}
+                                onChange={({ label }) => handleChange('industry', label)}
                                 placeholder={'Industry'}
                             />
                         </div>
                     </div>
                     <div className={styles.formContent}>
                         <div className={styles.country}>
-                            <Country onChange={onCountryChange} />
+                            <Country onChange={value => handleChange('country', value)} />
                         </div>
                         <div className={styles.selectContainer}>
                             <Select
@@ -134,7 +108,7 @@ const ContactUs = () => {
                                 classNamePrefix='common'
                                 menuPlacement={'auto'}
                                 options={geographyOptions}
-                                onChange={({ label }) => handleChangeGeography(label)}
+                                onChange={({ label }) => handleChange('geography', label)}
                                 placeholder={'Operating geography'}
                             />
                         </div>
@@ -142,9 +116,9 @@ const ContactUs = () => {
                     <div className={styles.extraInfo}>
                         <div>What would you like to talk about?</div>
                         <textarea
-                            name={'extraInfo'}
+                            name={'comment'}
                             className={styles.textArea}
-                            onChange={handleChange}
+                            onChange={e => handleChange('comment', e.target.value)}
                         />
                     </div>
                     <div className={styles.checkboxContainer}>
@@ -152,7 +126,7 @@ const ContactUs = () => {
                             type='checkbox'
                             name={'cookiePolicy'}
                             className={styles.checkbox}
-                            onChange={handleChangeCheckbox}
+                            onChange={e => handleChange('cookiePolicy', e.target.checked)}
                         />
                         <div className={styles.policy}>
                             <span>By submitting this form I accept privacy policy and</span>
@@ -169,7 +143,7 @@ const ContactUs = () => {
                             type='checkbox'
                             name={'newsLetter'}
                             className={styles.checkbox}
-                            onChange={handleChangeCheckbox}
+                            onChange={e => handleChange('newsLetter', e.target.checked)}
                         />
                         <div className={styles.policy}>
                             <span>I would like to receive your newsletter.</span>
