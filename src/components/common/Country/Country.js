@@ -34,7 +34,8 @@ const Country = props => {
             className='common-select'
             classNamePrefix='common'
             menuPlacement={'auto'}
-            onChange={({ value }) => onChange(value)}
+            name={'country'}
+            onChange={({ value }) => onChange('country', value)}
             options={options}
             placeholder={'Country'}
         />
