@@ -1,0 +1,15 @@
+.input {
+    background-color: transparent;
+    outline: none;
+    color: #000000;
+    border: none;
+    border-bottom: 1px solid #000;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    &::placeholder {
+        font-size: 1.6rem;
+    }
+}
