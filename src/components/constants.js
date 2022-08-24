@@ -54,11 +54,13 @@ export const geographyOptions = [
 
 export const contacts = [
     {
+        id: 1,
         title: 'Media enquiries',
         email: 'ress@tuumplatform.com',
         href: 'mailto:press@tuumplatform.com',
     },
     {
+        id: 2,
         title: 'Career questions',
         email: 'careers@tuumplatform.com',
         href: 'careers:press@tuumplatform.com',

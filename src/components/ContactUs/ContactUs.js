@@ -49,7 +49,7 @@ const ContactUs = () => {
             <div className={styles.content}>
                 <div>
                     {contacts.map(contact => (
-                        <div className={styles.contact}>
+                        <div key={contact.id} className={styles.contact}>
                             <div className={styles.contactTitle}>{contact.title}</div>
                             <a href={contact.href} className={styles.email}>
                                 {contact.email}
